@@ -10,7 +10,7 @@ resources:
     openaq_stations:
       name: openaq-stations
       description: Station explorer on openaq.gold.station_summary
-      source_code_path: ./src/app
+      source_code_path: ./apps/openaq-stations
       resources:
         - name: sql-warehouse
           sql_warehouse:
