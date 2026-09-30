@@ -1,0 +1,8 @@
+command: ['streamlit', 'run', 'app.py']
+env:
+  - name: 'WAREHOUSE_ID'
+    valueFrom: 'sql-warehouse'
+  - name: 'STATION_TABLE'
+    valueFrom: 'station-table'
+  - name: 'STREAMLIT_GATHER_USAGE_STATS'
+    value: 'false'
