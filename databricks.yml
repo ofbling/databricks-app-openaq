@@ -1,0 +1,31 @@
+bundle:
+  name: openaq_pipeline
+
+variables:
+  warehouse_id:
+    description: ID of the SQL warehouse the app queries
+
+resources:
+  apps:
+    openaq_stations:
+      name: openaq-stations
+      description: Station explorer on openaq.gold.station_summary
+      source_code_path: ./src/app
+      resources:
+        - name: sql-warehouse
+          sql_warehouse:
+            id: ${var.warehouse_id}
+            permission: CAN_USE
+        - name: station-table
+          uc_securable:
+            securable_full_name: openaq.gold.station_summary
+            securable_type: TABLE
+            permission: SELECT
+
+targets:
+  dev:
+    default: true
+    workspace:
+      host: https://dbc-e94f519f-90c1.cloud.databricks.com/
+    variables:
+      warehouse_id: /sql/1.0/warehouses/0a91f38e8cbdcb02
