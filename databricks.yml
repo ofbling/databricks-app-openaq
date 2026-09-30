@@ -28,4 +28,4 @@ targets:
     workspace:
       host: https://dbc-e94f519f-90c1.cloud.databricks.com/
     variables:
-      warehouse_id: /sql/1.0/warehouses/0a91f38e8cbdcb02
+      warehouse_id: 0a91f38e8cbdcb02
